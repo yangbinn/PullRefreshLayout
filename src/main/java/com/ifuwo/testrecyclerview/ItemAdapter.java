@@ -62,6 +62,13 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     Log.i(TAG, "click,position="+getLayoutPosition());
                 }
             });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Log.i(TAG, "longClick,position="+getLayoutPosition());
+                    return false;
+                }
+            });
         }
     }
 }

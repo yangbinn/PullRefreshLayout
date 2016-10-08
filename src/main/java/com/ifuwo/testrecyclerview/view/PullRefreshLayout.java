@@ -51,7 +51,6 @@ public class PullRefreshLayout extends RelativeLayout implements View.OnClickLis
     private int mPullState;
     private boolean mNoMore;
 
-
     private OnRefreshListener mRefreshListener;
     private OnLoadListener mLoadListener;
 
@@ -137,18 +136,19 @@ public class PullRefreshLayout extends RelativeLayout implements View.OnClickLis
         mPulled = false;
         if (((IPull) mContentView).pullDown()) {
             mPulled = 0 < y || mScrollY > 0;
-            if(mPullState != REFRESHING && mPullState != LOADING){
+            if (mPullState != REFRESHING && mPullState != LOADING) {
                 mPullState = PULL_DOWN_TO_REFRESH;
             }
         } else if (((IPull) mContentView).pullUp()) {
             mPulled = 0 > y || mScrollY < 0;
-            if(mPullState != REFRESHING && mPullState != LOADING){
+            if (mPullState != REFRESHING && mPullState != LOADING) {
                 mPullState = PULL_UP_TO_LOAD;
             }
         }
         if (mPulled && (Math.abs(y) > 5 || mScrollY != 0)) {
             rotateView(y);
             requestLayout();
+            setPressed(false);
         }
         mLastY = moveY;
     }
@@ -156,7 +156,6 @@ public class PullRefreshLayout extends RelativeLayout implements View.OnClickLis
     private void upY(MotionEvent ev) {
         mPulled = false;
         if (checkRefreshState()) {
-            ev.setAction(MotionEvent.ACTION_CANCEL);
             if (mPullState == REFRESHING) {
                 postRefresh(true);
             } else if (mPullState == LOADING) {
@@ -212,11 +211,10 @@ public class PullRefreshLayout extends RelativeLayout implements View.OnClickLis
         } else if (mPullState != REFRESHING && mPullState != LOADING) {
             if (mScrollY >= REFRESH_MIN) {
                 mPullState = REFRESHING;
-                result = true;
             } else if (mScrollY <= -REFRESH_MIN) {
                 mPullState = LOADING;
-                result = true;
             }
+            result = true;
         }
         return result;
     }

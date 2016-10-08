@@ -4,6 +4,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -42,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 super.getItemOffsets(outRect, view, parent, state);
                 outRect.bottom = 2;
                 outRect.top = 2;
-                outRect.right = 0;
-                outRect.left = 0;
+                outRect.right = 2;
+                outRect.left = 2;
             }
         });
 
 
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 40; i++) {
             list.add("item" + (i));
         }
         final ItemAdapter adapter = new ItemAdapter(list);
