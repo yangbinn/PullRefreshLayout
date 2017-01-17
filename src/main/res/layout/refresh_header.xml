@@ -3,13 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <com.example.pullrefreshlayout.view.CircleView
         android:id="@+id/header_pull_iv"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:src="@mipmap/xsearch_loading"/>
+        android:layout_marginBottom="18dp"/>
 
 </RelativeLayout>

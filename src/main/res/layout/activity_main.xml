@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.ifuwo.testrecyclerview.view.PullRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.pullrefreshlayout.view.PullRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_refresh_layout"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.ifuwo.testrecyclerview.MainActivity">
+    android:layout_height="match_parent">
 
-    <com.ifuwo.testrecyclerview.view.XRecyclerView
+    <com.example.pullrefreshlayout.view.XRecyclerView
         android:id="@+id/main_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray"
         android:overScrollMode="never"
-        android:scrollbars="none"/>
-</com.ifuwo.testrecyclerview.view.PullRefreshLayout>
+        android:scrollbars="none" />
+</com.example.pullrefreshlayout.view.PullRefreshLayout>

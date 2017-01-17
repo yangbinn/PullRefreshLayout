@@ -3,18 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <com.example.pullrefreshlayout.view.CircleView
         android:id="@+id/footer_pull_iv"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
         android:layout_centerHorizontal="true"
-        android:src="@mipmap/xsearch_loading"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="18dp" />
 
     <TextView
         android:id="@+id/footer_no_more_tv"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="60dp"
         android:text="没有更多"
         android:gravity="center"
         android:textSize="15sp"
