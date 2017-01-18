@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fuwo.lib.PullRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fuwo.lib.XRecyclerView
+        android:id="@+id/main_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+</com.fuwo.lib.PullRefreshLayout>
